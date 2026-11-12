@@ -1,10 +1,11 @@
 #include <AEEngine.h>
 #include <imgui/imgui.h>
 #include "Level 1.h"
+#include "Button.hh"
 int mode = 0;
 
 bool ShowFrameworkMenu();
-
+Button button(AEVec2(0.f,0.f), AEVec2(120.f,30.f), AE_COLORS_GREEN_YELLOW,"Button");
 void Level_1_Load()
 {
 }
@@ -26,6 +27,7 @@ void Level_1_Render()
     // clear frame buffer, do not delete this code
     AEGfxSetClearColor(AEGfxColor(0, 0, 0));
     AEGfxClearBuffer();
+    button.Draw();
 }
 
 void Level_1_Free()
