@@ -25,6 +25,8 @@
     <ClCompile Include="src\Framework\entity.cc" />
     <ClCompile Include="src\Levels\Button.cc" />
     <ClCompile Include="src\Levels\Level 1.cpp" />
+    <ClCompile Include="src\Levels\MouseEventManager.cc" />
+    <ClCompile Include="src\Levels\MouseEventManager.hh" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>

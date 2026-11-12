@@ -2,12 +2,18 @@
 #include <imgui/imgui.h>
 #include "Level 1.h"
 #include "Button.hh"
+#include "MouseEventManager.hh"
 int mode = 0;
 
 bool ShowFrameworkMenu();
 Button button(AEVec2(0.f,0.f), AEVec2(120.f,30.f), AE_COLORS_GREEN_YELLOW,"Button");
+MouseEventManager eventManager;
 void Level_1_Load()
 {
+    Button* btn = &button;
+    eventManager.addHandler([btn](MouseEvent * event) {
+        btn->OnMouseClick(event);
+        });
 }
 
 void Level_1_Init()
@@ -20,6 +26,13 @@ void Level_1_Update()
     // core keyboard shortcuts and GUI, do not delete this code!
     KeyboardInput();
     bool guiActive = ShowFrameworkMenu();
+
+
+    if (AEInputMousePressed(0))
+    {
+        MouseEvent event;
+        eventManager.trigger(&event);
+    }
 }
 
 void Level_1_Render()

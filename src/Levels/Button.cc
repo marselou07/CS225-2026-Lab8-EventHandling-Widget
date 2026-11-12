@@ -15,3 +15,8 @@ void Button::Update()
 {
 
 }
+
+void Button::OnMouseClick(MouseEvent* event)
+{
+	color = AE_COLORS_AMBER;
+}
