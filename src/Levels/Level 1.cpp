@@ -31,6 +31,8 @@ void Level_1_Update()
     if (AEInputMousePressed(0))
     {
         MouseEvent event;
+        MousePositionData mouseData = AEGetMouseData();
+        AEStaticPointToStaticRect(&mouseData.position,&button.position, button.size.x,button.size.y);
         eventManager.trigger(&event);
     }
 }

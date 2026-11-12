@@ -7,7 +7,6 @@ class MouseEvent : public Event
 {
 	public:
 		AEVec2 position;
-
 };
 
 
